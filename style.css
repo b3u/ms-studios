@@ -1,0 +1,191 @@
+:root{
+  --black: #222;
+  --black-overlay: #222222dc;
+  --white: #fefefe;
+}
+
+/* Global */
+p, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
+}
+
+main {
+  padding: 0 16px;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+
+  color: var(--white);
+  background-color: var(--black);
+  font-family: Montserrat, sans-serif;
+}
+
+
+/* Nav */
+header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 6px 16px;
+  box-sizing: border-box;
+}
+
+header a.logo {
+  float: left;
+}
+
+header a.logo img {
+  height: 48px;
+}
+
+header nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 50px 0;
+
+  transition: transform .3s ease-out;
+  background-color: var(--white);
+}
+
+header nav.hiddenMenu {
+  transform: translate(0, -100%);
+}
+
+header nav a{
+  display: block;
+  text-align: center;
+  text-decoration: none;
+
+  color: var(--black);
+  font-size: 24px;
+}
+
+header nav a:not(:last-of-type)::after {
+  content: ""; 
+  display: block;
+  background-color: var(--black);
+  width: 75px;
+  height: 2px;
+  margin: 25px auto;
+}
+
+header a.hamburger {
+float: right;
+
+position: relative;
+z-index: 3;
+transition: transform .5s ease-out;
+}
+
+header a.hamburger span{
+  display: block;
+  background-color: var(--white);
+  border-radius: 50px;
+  height: 6px;
+  width: 40px;
+  margin: 8px 0;
+  transition: transform .5s ease-out, opacity .5s ease-out;
+}
+
+header a.hamburger.exit {transform: rotate(-45deg)}
+header a.hamburger.exit span:nth-of-type(2){opacity: 0}
+header a.hamburger.exit span{background-color: var(--black);}
+header a.hamburger.exit span:last-of-type{transform: rotate(90deg) translate(-69%, 0)}
+
+/* Splash Section */
+main.splash {
+  background-image: url('assets/img/hrayr-movsisyan-244767-unsplash.jpg');
+  background-position: center;
+  background-size: cover;
+  box-sizing: border-box;
+
+  text-align: center;
+  height: 100vh;
+  transform: scaleX(-1);
+}
+
+main.splash * {
+  transform: scaleX(-1);
+}
+
+main.splash h1 {
+  padding-top: 200px;
+  font-weight: normal;
+  font-size: 56px;
+}
+
+main.splash p {
+  padding-top: 30px;
+  font-size: 24px;
+}
+
+main.splash a.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--white);
+  padding: 6px 12px;
+  margin-top: 70px;
+  border: 2px solid var(--white);
+
+  transition: background .2s ease-out;
+}
+
+main.splash a.btn:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* About Section */
+main.about {
+  padding: 0; /* Override global `main` styling */
+}
+
+main.about section {
+  position: relative;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+main.about section:first-of-type div.img {background-image: url('assets/img/jaclyn-clark-115848-unsplash.jpg')}
+main.about section:nth-of-type(2) div.img {background-image: url('assets/img/kelly-sikkema-216022-unsplash.jpg')}
+main.about section:last-of-type div.img {background-image: url('assets/img/imran-creator-1129271-unsplash.jpg')}
+
+main.about section div.img {
+  height: 100vw;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+}
+
+main.about section div.img-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  padding: 0 16px;
+  background-color: var(--black-overlay);
+
+  transform: translate(100%, 0);
+  transition: transform .5s ease-out;
+}
+
+main.about section div.img-overlay h3 {
+  font-weight: normal;
+  font-size: 24px;
+  text-align: center;
+  margin: 65px 0;
+}
+
+main.about section div.img-overlay.visibleOverlay {
+  transform: translate(0, 0);
+}

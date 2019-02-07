@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EMES Studios</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="logo"><img src="assets/temp_logo.svg"></a>
+        <nav class="hiddenMenu">
+            <a href="/">Home</a>
+            <a href="bio.html">Bio</a>
+            <a href="music.html">Music</a>
+            <a href="/#contact">Contact</a>
+        </nav>
+        <a href="#!" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </header>
+    <main class="splash">
+        <h1>Emes Studios</h1>
+        <p>Lorem ipsum dolor amet keffiyeh air plant meh.</p>
+        <a href="#contact" class="btn">Contact Me</a>
+    </main>
+    <main class="about">
+        <section>
+            <div class="img">
+            </div>
+            <div class="img-overlay">
+                <h3>Arrangements</h3>
+                <p>Vexillologist tousled banjo, prism distillery brunch iceland kale chips mlkshk cliche keffiyeh. Kitsch PBR&B forage, single-origin coffee gentrify literally la croix umami mlkshk. Marfa intelligentsia paleo locavore cronut, vice tote bag listicle unicorn echo park. Crucifix flannel photo booth kale chips cloud bread authentic master cleanse seitan wolf tattooed artisan sustainable ugh.</p>
+            </div>
+        </section>
+        <section>
+            <div class="img">
+            </div>
+            <div class="img-overlay">
+                <h3>Recording</h3>
+                <p>Vexillologist tousled banjo, prism distillery brunch iceland kale chips mlkshk cliche keffiyeh. Kitsch PBR&B forage, single-origin coffee gentrify literally la croix umami mlkshk. Marfa intelligentsia paleo locavore cronut, vice tote bag listicle unicorn echo park. Crucifix flannel photo booth kale chips cloud bread authentic master cleanse seitan wolf tattooed artisan sustainable ugh.</p>
+            </div>
+        </section>
+        <section>
+            <div class="img">
+            </div>
+            <div class="img-overlay">
+                <h3>Post-Production</h3>
+                <p>Vexillologist tousled banjo, prism distillery brunch iceland kale chips mlkshk cliche keffiyeh. Kitsch PBR&B forage, single-origin coffee gentrify literally la croix umami mlkshk. Marfa intelligentsia paleo locavore cronut, vice tote bag listicle unicorn echo park. Crucifix flannel photo booth kale chips cloud bread authentic master cleanse seitan wolf tattooed artisan sustainable ugh.</p>
+            </div>
+        </section>
+    </main>
+    <main class="contact" id="contact">
+        <h2>Contact</h2>
+        <form method="POST" data-netlify="true" name="contact_home">
+            <p>
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="Your Name" required="true" />
+            </p>
+
+            <p>
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="you@example.com" required="true" />
+            </p>
+            <p>
+                <label for="message">Message</label>
+                <textarea name="message" required="true" placeholder="Message goes here">
+
+                </textarea>
+            </p>
+            
+            <div data-netlify-recaptcha="true"></div>
+
+            <button type="submit">Send <img src="/assets/send.svg" alt=""></button>
+        </form>
+    </main>
+<script>
+// Navigation Menu:
+document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('hiddenMenu');
+    document.querySelector('.hamburger').classList.toggle('exit');
+});
+
+// Image Overlays:
+// Open Overlays
+document.querySelectorAll('.img').forEach(img => {
+    img.addEventListener('click', ev => {
+        document.querySelectorAll('.img-overlay').forEach(el => el.classList.remove('visibleOverlay'))
+        ev.target.nextElementSibling.classList.add('visibleOverlay');
+    })
+})
+
+// Close Overlays
+document.querySelectorAll('.img-overlay').forEach(el => {
+    el.addEventListener('click', ev => {
+        el.classList.remove('visibleOverlay');
+    })
+})
+</script>
+</body>
+</html>
