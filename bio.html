@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EMES Studios</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bio-page">
+    <header>
+        <a href="/" class="logo"><img src="assets/temp_logo.svg"></a>
+        <nav class="hiddenMenu">
+            <a href="/">Home</a>
+            <a href="bio.html">Bio</a>
+            <a href="music.html">Music</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="#!" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </header>
+    <main class="bio">
+        <div class="bio-img" title="Photo by Tom Pottiger on Unsplash"></div>
+        <h1>My Bio</h1>
+        <article>
+            <p>Lorem ipsum dolor amet etsy biodiesel cray vexillologist cloud bread fingerstache migas. Banh mi meh ut umami non readymade, cred migas selvage YOLO esse nisi sed cardigan 8-bit. Wolf in ugh cillum ut aliquip coloring book next level meh. Crucifix gastropub tilde laborum pitchfork.</p>
+            <p>90's heirloom ennui consequat chicharrones fixie ullamco hell of flannel occupy. Fam dolor kale chips keytar pok pok 8-bit man braid ullamco listicle hexagon tilde portland. Tilde viral hoodie, vaporware ennui venmo you probably haven't heard of them polaroid kogi umami.</p>
+        </article>
+    </main>
+    <footer>
+        <div class="social">
+            <a href="#!"><img src="assets/spotify.svg" alt=""></a>
+            <a href="#!"><img src="assets/soundcloud.svg" alt="😄"></a>
+            <a href="#!"><img src="assets/mail.svg" alt="🌐"></a>
+        </div>
+        <p>Copyright © <span id="year">2019</span> Emes Studios</p>
+    </footer>
+<script>
+// Navigation Menu:
+document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('hiddenMenu');
+    document.querySelector('.hamburger').classList.toggle('exit');
+});
+
+// Copyright year
+document.getElementById('year').innerHTML = new Date().getFullYear();
+</script>
+</body>
+</html>

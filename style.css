@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 :root{
-  --black: #222;
-  --black-overlay: #222222dc;
+  --black: #0d0d0d;
+  --black-overlay: #0d0d0ddc;
   --white: #fefefe;
+  --white-20: #fefefe28;
 }
 
 /* Global */
@@ -15,6 +18,8 @@ main {
   padding: 0 16px;
 }
 
+html{scroll-behavior: smooth}
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -23,7 +28,6 @@ body {
   background-color: var(--black);
   font-family: Montserrat, sans-serif;
 }
-
 
 /* Nav */
 header {
@@ -101,18 +105,30 @@ header a.hamburger.exit span:last-of-type{transform: rotate(90deg) translate(-69
 
 /* Splash Section */
 main.splash {
+  position: relative;
+  box-sizing: border-box;  
+  text-align: center;
+  height: 100vh;
+}
+
+main.splash::after, body:not(.home)::after {
+  content: "";
+
   background-image: url('assets/img/hrayr-movsisyan-244767-unsplash.jpg');
   background-position: center;
   background-size: cover;
+
   box-sizing: border-box;
-
-  text-align: center;
   height: 100vh;
+  width: 100%;
   transform: scaleX(-1);
-}
 
-main.splash * {
-  transform: scaleX(-1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }
 
 main.splash h1 {
@@ -138,8 +154,7 @@ main.splash a.btn {
 }
 
 main.splash a.btn:hover {
-  background: var(--white);
-  color: var(--black);
+  background: var(--white-20);
 }
 
 /* About Section */
@@ -188,4 +203,315 @@ main.about section div.img-overlay h3 {
 
 main.about section div.img-overlay.visibleOverlay {
   transform: translate(0, 0);
+}
+
+/* Contact Section */
+main.contact h2{
+  text-align: center;
+  margin: 65px 0 50px 0;
+}
+
+main.contact form {
+  width: 200px;
+  margin: 0 auto;
+}
+
+main.contact form p {
+  margin: 18px 0;
+}
+
+main.contact label {
+  display: block;
+}
+
+main.contact p > * {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 4px;
+  font-family: Montserrat, sans-serif;
+}
+
+main.contact textarea {
+  height: 100px;
+}
+
+main.contact form button {
+  float: right;
+  border: 2px solid var(--white);
+  background-color: transparent;
+  color: var(--white);
+  padding: 6px 8px;
+  margin-top: 24px;
+  transition: background .2s ease-out;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+main.contact form button:hover {
+  background: var(--white-20);
+}
+
+main.contact form button img {
+  width: 18px;
+  margin-left: 6px;
+}
+
+/* Footer */
+footer {
+  padding: 48px 16px 12px 16px;
+  clear: both;
+  text-align: center;
+}
+
+footer .social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 150px;
+  margin: 0 auto;
+}
+
+footer .social img{
+  width: 36px;
+}
+
+footer p {
+  margin-top: 24px;
+}
+
+/* Bio Page */
+body.bio-page div.bio-img {
+  background-image: url('assets/img/tom-pottiger-637086-unsplash.jpg');
+  background-position: center;
+  background-size: cover;
+
+  margin-left: -16px; /* Make image fill screen-width */
+
+  width: 100vw;
+  height: 250px;
+}
+
+body.bio-page h1 {
+  font-weight: normal;
+  text-align: center;
+  margin-top: 24px;
+}
+
+body.bio-page article {
+  margin-top: 36px;
+}
+
+body.bio-page article p {
+  margin: 16px 0;
+}
+
+/* Contact Page */
+body.contact-page h1{
+  margin-top: 100px;
+  text-align: center;
+  font-weight: normal;
+}
+
+body.contact-page p.lead {
+  text-align: center;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+body.contact-page footer p {
+  margin-top: 6px;
+}
+
+/* Mobile-landscape View */
+@media only screen and (orientation: landscape) {
+  /* Splash */
+  main.splash {
+    text-align: left;
+  }
+
+  main.splash h1 {
+    padding-top: 100px;
+  }
+
+  main.splash a.btn {
+    float: left;
+  }
+
+  /* About Section */
+  main.about section div.img{
+    height: 100vh;
+  }
+
+  /* Bio Page */
+  body.bio-page div.bio-img {
+    height: 50vh;
+  }
+}
+
+/* Desktop View*/
+@media only screen and (min-width: 768px) {
+  /* Global */
+  main {
+    padding: 0 36px;
+  }
+
+  /* Header */
+  header {
+    padding: 12px 36px;
+  }
+
+  header nav {
+    position: unset;
+    float: right;
+    width: initial;
+    background-color: transparent;
+    padding: 0;
+    transition: none;
+  }
+
+  header nav a {
+    display: inline-block;
+    color: var(--white);
+    font-size: 18px;
+    padding: 0 12px;
+  }
+
+  header nav a:hover {
+    font-weight: bold;
+  }
+
+  header nav a:not(:last-of-type)::after {
+    display: none;
+  }
+
+  header nav.hiddenMenu {transform: unset}
+
+  header a.hamburger {
+    display: none;
+  }
+
+  /* Splash Section */
+  main.splash {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  main.splash h1 {
+    padding-top: 0;
+  }
+
+  main.splash p {
+    padding-top: 6px;
+  }
+
+  main.splash a.btn {
+    margin: 50px 0 150px 0;
+  }
+
+  /* About Section */
+  main.about {
+    margin: 200px 0;
+  }
+
+  main.about section {
+    position: static;
+    width: 66%;
+    margin: 100px auto;
+
+    display: flex;
+    align-items: flex-end;
+  }
+
+  main.about section:nth-of-type(2) {flex-direction: row-reverse}
+
+  main.about section div.img {
+    height: 250px;
+    width: 250px;
+    margin-right: 48px;
+  }
+
+  main.about section:nth-of-type(2) div.img {margin: 0 0 0 48px}
+
+  main.about section div.img-overlay {
+    width: calc(100% - 250px - 36px);
+    
+    /* Overrides */
+    position: static;
+  
+    padding: 0;
+    background-color: transparent;
+  
+    transform: none;
+    transition: none;
+  }
+
+  main.about section div.img-overlay h3 {
+    text-align: left;
+    margin: 0 0 18px 0;
+  }
+
+  /* Footer */
+  footer {
+    padding: 72px 36px 12px 36px; /* Gutters, and top & bottom padding*/
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer div.social {
+    margin: 0;
+  }
+
+  footer p {margin-top: 0}
+
+  /* Contact Page */
+  body.contact-page, body.bio-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  body.contact-page footer, body.bio-page footer {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 12px;
+    width: 100%;
+  }
+
+  /* Bio Page */
+  body.bio-page main.bio{
+    width: 66%;
+    margin: 0 auto;
+  }
+
+  body.bio-page div.bio-img {
+    margin: 0 124px 0 0;
+    width: 45%;
+    height: 70vh;
+    float: left;
+  }
+
+  body.bio-page h1 {
+    padding: 0 0 0 24px;
+    text-align: left;
+  }
+
+  body.bio-page footer {
+    bottom: 0;
+  }
+
+  /* Contact Page */
+  body.contact-page h1 {
+    margin-top: 0;
+  }
 }

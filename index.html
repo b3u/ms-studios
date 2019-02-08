@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>EMES Studios</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home">
     <header>
         <a href="/" class="logo"><img src="assets/temp_logo.svg"></a>
         <nav class="hiddenMenu">
             <a href="/">Home</a>
             <a href="bio.html">Bio</a>
             <a href="music.html">Music</a>
-            <a href="/#contact">Contact</a>
+            <a href="contact.html">Contact</a>
         </nav>
         <a href="#!" class="hamburger">
             <span></span>
@@ -57,7 +56,7 @@
     </main>
     <main class="contact" id="contact">
         <h2>Contact</h2>
-        <form method="POST" data-netlify="true" name="contact_home">
+        <form method="POST" netlify name="contact_home">
             <p>
                 <label for="name">Name</label>
                 <input type="text" name="name" placeholder="Your Name" required="true" />
@@ -69,16 +68,22 @@
             </p>
             <p>
                 <label for="message">Message</label>
-                <textarea name="message" required="true" placeholder="Message goes here">
-
-                </textarea>
+                <textarea name="message" required="true" placeholder="Message goes here"></textarea>
             </p>
-            
+
             <div data-netlify-recaptcha="true"></div>
 
             <button type="submit">Send <img src="/assets/send.svg" alt=""></button>
         </form>
     </main>
+    <footer>
+        <div class="social">
+            <a href="#!"><img src="assets/spotify.svg" alt=""></a>
+            <a href="#!"><img src="assets/soundcloud.svg" alt=""></a>
+            <a href="#!"><img src="assets/mail.svg" alt=""></a>
+        </div>
+        <p>Copyright © <span id="year">2019</span> Emes Studios</p>
+    </footer>
 <script>
 // Navigation Menu:
 document.querySelector('.hamburger').addEventListener('click', () => {
@@ -101,6 +106,9 @@ document.querySelectorAll('.img-overlay').forEach(el => {
         el.classList.remove('visibleOverlay');
     })
 })
+
+// Copyright year
+document.getElementById('year').innerHTML = new Date().getFullYear();
 </script>
 </body>
 </html>
