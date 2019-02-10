@@ -235,6 +235,12 @@ main.contact textarea {
   height: 100px;
 }
 
+main.contact div.recaptcha {
+  transform: scale(0.8);
+  display: flex;
+  justify-content: center;
+}
+
 main.contact form button {
   float: right;
   border: 2px solid var(--white);
