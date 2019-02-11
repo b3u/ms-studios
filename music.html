@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Emes Studios</title>
     <link rel="stylesheet" href="style.css">
+    <script src="res/soundcloud.js"></script>
 </head>
-<body class="music">
+<body class="music-page">
     <header>
         <a href="/" class="logo"><img src="assets/temp_logo.svg"></a>
-        <nav class="hiddenMenu">
+        <nav class="hidden-menu">
             <a href="/">Home</a>
             <a href="bio.html">Bio</a>
             <a href="music.html">Music</a>
@@ -22,41 +23,31 @@
             <span></span>
         </a>
     </header>
-    <main class="music">
+    <main class="music-page__main">
         <h1>My Music</h1>
-        <section class="row-container">
-            <div class="row">
-                <iframe width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/473656806&amp;visual=true&amp;show_user=false"></iframe>
-                <iframe width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/461232288&amp;visual=true&amp;show_user=false"></iframe>
-                <iframe width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/454754676&amp;visual=true&amp;show_user=false"></iframe>
-                <iframe width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/300162829&amp;visual=true&amp;show_user=false"></iframe>
-                <iframe width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/253893170&amp;visual=true&amp;show_user=false"></iframe>
-                <iframe width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/246054955&amp;visual=true&amp;show_user=false"></iframe>
-            </div>
-        </section>
-        <section class="row-container">
-            <div class="row">
-                <iframe width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/473656806&amp;visual=true&amp;show_user=false"></iframe>
-                <iframe width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/461232288&amp;visual=true&amp;show_user=false"></iframe>
-                <iframe width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/454754676&amp;visual=true&amp;show_user=false"></iframe>
-                <iframe width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/300162829&amp;visual=true&amp;show_user=false"></iframe>
-                <iframe width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/253893170&amp;visual=true&amp;show_user=false"></iframe>
-                <iframe width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/246054955&amp;visual=true&amp;show_user=false"></iframe>
-            </div>
-        </section>
+        <div class="row--container">
+            <section class="row">
+                <iframe id="item1" class="player" width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/473656806&amp;visual=true&amp;show_user=false"></iframe>
+                <iframe id="item2" class="player" width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/461232288&amp;visual=true&amp;show_user=false"></iframe>
+                <iframe id="item3" class="player" width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/454754676&amp;visual=true&amp;show_user=false"></iframe>
+                <iframe id="item4" class="player" width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/300162829&amp;visual=true&amp;show_user=false"></iframe>
+                <iframe id="item5" class="player" width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/253893170&amp;visual=true&amp;show_user=false"></iframe>
+                <iframe id="item6" class="player" width="200px" height="200px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/246054955&amp;visual=true&amp;show_user=false"></iframe>
+            </section>
+        </div>
     </main>
     <footer>
         <div class="social">
-            <a href="#!"><img src="assets/spotify.svg" alt=""></a>
-            <a href="#!"><img src="assets/soundcloud.svg" alt="😄"></a>
-            <a href="#!"><img src="assets/mail.svg" alt="🌐"></a>
+            <a href="#!"><img src="assets/icon/spotify.svg" alt=""></a>
+            <a href="https://soundcloud.com/ms-music-5" target="_blank"><img src="assets/icon/soundcloud.svg" alt="🎵"></a>
+            <a href="mailto:emesstuff25@gmail.com"><img src="assets/icon/mail.svg" alt="📧"></a>
         </div>
         <p>Copyright © <span id="year">2019</span> Emes Studios</p>
     </footer>
 <script>
     // Navigation Menu:
     document.querySelector('.hamburger').addEventListener('click', () => {
-        document.querySelector('nav').classList.toggle('hiddenMenu');
+        document.querySelector('nav').classList.toggle('hidden-menu');
         document.querySelector('.hamburger').classList.toggle('exit');
     });
 

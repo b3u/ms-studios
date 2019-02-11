@@ -34,7 +34,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 2;
-  width: 100%;
+  width: 100vw;
   padding: 6px 16px;
   box-sizing: border-box;
 }
@@ -58,7 +58,7 @@ header nav {
   background-color: var(--white);
 }
 
-header nav.hiddenMenu {
+header nav.hidden-menu {
   transform: translate(0, -100%);
 }
 
@@ -316,6 +316,46 @@ body.bio-page article p {
   margin: 16px 0;
 }
 
+/* Music */
+body.music-page h1{
+  margin-top: 100px;
+  text-align: center;
+}
+
+body.music-page div.row--container {
+  width: 100vw;
+  overflow-x: scroll;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+body.music-page div.row--container::-webkit-scrollbar {display: none}
+
+body.music-page section.row {
+  margin: 50px calc(50vw - 100px) 0 calc(50vw - 100px);
+  display: inline-flex;
+}
+
+body.music-page section.row .player {margin: 0 24px}
+body.music-page section.row .player:first-of-type{margin-left:0}
+body.music-page section.row .player:last-of-type{margin-right:0}
+
+body.music-page footer {
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  bottom:0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+body.music-page footer p {
+  margin-top: 6px;
+}
+
 /* Contact Page */
 body.contact-page h1{
   margin-top: 100px;
@@ -357,6 +397,18 @@ body.contact-page footer p {
   body.bio-page div.bio-img {
     height: 50vh;
   }
+
+  /* Music Page */
+  body.music-page h1{
+    margin-top: 50px;
+  }
+  body.music-page main.music-page__main {
+    height: 85vh;
+  }
+
+  body.music-page footer {
+    position: relative;
+  }
 }
 
 /* Desktop View*/
@@ -395,7 +447,7 @@ body.contact-page footer p {
     display: none;
   }
 
-  header nav.hiddenMenu {transform: unset}
+  header nav.hidden-menu {transform: unset}
 
   header a.hamburger {
     display: none;
@@ -514,6 +566,35 @@ body.contact-page footer p {
 
   body.bio-page footer {
     bottom: 0;
+  }
+
+  /* Music Page */
+  body.music-page h1{
+    margin-top: 120px;
+  }
+
+  body.music-page main.music-page__main {
+    height: auto;
+  }
+
+  body.music-page div.row--container{
+    overflow: hidden;
+  }
+
+  body.music-page section.row {
+    margin: 50px auto 0 auto;
+    display: flex;
+    flex-flow: wrap;
+    width: 748px;
+  }
+  
+  body.music-page section.row .player {margin: 24px}
+
+  body.music-page section.row .player:first-of-type{margin-left:24px}
+  body.music-page section.row .player:last-of-type{margin-right:24px}
+
+  body.music-page footer {
+    position: absolute;
   }
 
   /* Contact Page */
